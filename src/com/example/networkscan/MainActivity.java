@@ -7,6 +7,7 @@ import com.example.networkscan.NetWorkScanner.serverBean;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
@@ -21,7 +22,10 @@ public class MainActivity extends Activity {
 			@Override
 			public void onFinish(ArrayList<serverBean> servers) {
 				// TODO Auto-generated method stub
-				
+				for (serverBean bean : servers) {
+					Log.i("chauster", bean.serverName);
+					Log.i("chauster", bean.serverIp);
+				}
 			}
 		});
 		scanner.start();
